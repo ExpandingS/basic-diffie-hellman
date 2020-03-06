@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #Basic Diffie Hellman
 import random, numpy, sys
 
