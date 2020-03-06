@@ -30,7 +30,7 @@ def initialise():
 class client:
     def __init__(self):
         global p , g
-        self.secret = random.choice(primes)
+        self.secret = random.randrange(3,p-1)
         if XOR:
             self.Pkey = int((g^self.secret) % p)
         else:
