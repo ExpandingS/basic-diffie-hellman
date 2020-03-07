@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 
 #Basic Diffie Hellman
-import random, numpy, sys
+import random, numpy, sys, argparse
 
 
-if len(sys.argv) == 1:
+if "-h" in sys.argv or "--help" in sys.argv:
     print("Usage:")
-    print("Diffie_Hellman.py n OR Diffie_Hellman.py XOR")
-    print("n is for usual diffie-hellman, XOR is for replacing (mod) wth XOR, and returning the times it worked as a percentage.")
+    print("./Diffie_Hellman.py")
+    print("./Diffie_Hellman.py XOR")
+    print()
+    print("XOR option replaces (mod) with ^, and outputs how often it works.")
     exit() 
-
-if sys.argv[1] == "XOR":
+if "XOR" in sys.argv:
     XOR=True
 else:
     XOR=False
+
+
+
 
 #thanks, StackOverflow
 def primesfromXtoN(low,high):
@@ -62,7 +66,7 @@ if __name__ == "__main__":
     while True:
         run()
         if XOR:
-            print(worked/ran*100)
+            print(str(worked/ran*100)+"%")
         else:
             print(worked)
 
